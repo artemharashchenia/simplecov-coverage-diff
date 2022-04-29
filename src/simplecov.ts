@@ -69,7 +69,14 @@ export class Coverage {
   files: FileCoverage[]
 
   constructor(resultset: ResultSet) {
-    const coverages = resultset['RSpec']['coverage']
+    const coverages = Object.assign(
+      {},
+        resultset['1/4']['coverage'],
+        resultset['2/4']['coverage'],
+        resultset['3/4']['coverage'],
+        resultset['4/4']['coverage']
+      )
+
     this.files = []
     for (const filename of Object.keys(coverages)) {
       const coverage = coverages[filename]
