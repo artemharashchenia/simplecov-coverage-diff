@@ -1,6 +1,6 @@
-name: 'SimpleCov resultset difference'
+name: 'SimpleCov coverage difference with parsing from my resultset'
 description: 'Creates a comment in the pull-request comparing two SimpleCov resultset files.'
-author: Kazuki Nishikawa
+author: Artsiom Harashchenia
 inputs:
   base-resultset-path:
     description: 'SimpleCov generated "resultset.json" file path from the base branch'
