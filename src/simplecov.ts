@@ -71,10 +71,10 @@ export class Coverage {
   constructor(resultset: ResultSet) {
     const coverages = Object.assign(
       {},
-        resultset['1/4']['coverage'],
-        resultset['2/4']['coverage'],
-        resultset['3/4']['coverage'],
-        resultset['4/4']['coverage']
+        resultset['(1/4)']['coverage'],
+        resultset['(2/4)']['coverage'],
+        resultset['(3/4)']['coverage'],
+        resultset['(4/4)']['coverage']
       )
 
     this.files = []
