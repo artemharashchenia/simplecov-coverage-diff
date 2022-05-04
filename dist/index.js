@@ -6459,7 +6459,6 @@ function branchesCoverages(coverage) {
 }
 class Coverage {
     constructor(resultset) {
-      console.log(resultset);
       const coverages = Object.assign(
         {},
         resultset['(1/4)']['coverage'],
@@ -6472,15 +6471,13 @@ class Coverage {
         resultset['(1/1)']['coverage'],
       )
 
-      console.log(coverages)
-
       this.files = [];
       for (const filename of Object.keys(coverages)) {
         const coverage = coverages[filename];
         this.files.push({
           filename,
           lines: linesCoverage(coverage.lines),
-          branches: branchesCoverages(coverage.branches)
+          branches: branchesCoverages(coverage.branches || {})
         });
       }
     }
