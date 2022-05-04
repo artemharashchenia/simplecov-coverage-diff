@@ -6459,16 +6459,23 @@ function branchesCoverages(coverage) {
 }
 class Coverage {
     constructor(resultset) {
-        const coverages = resultset['RSpec']['coverage'];
-        this.files = [];
-        for (const filename of Object.keys(coverages)) {
-            const coverage = coverages[filename];
-            this.files.push({
-                filename,
-                lines: linesCoverage(coverage.lines),
-                branches: branchesCoverages(coverage.branches)
-            });
-        }
+      const coverages = Object.assign(
+        {},
+        resultset['(1/4)']['coverage'],
+        resultset['(2/4)']['coverage'],
+        resultset['(3/4)']['coverage'],
+        resultset['(4/4)']['coverage']
+      )
+
+      this.files = [];
+      for (const filename of Object.keys(coverages)) {
+        const coverage = coverages[filename];
+        this.files.push({
+          filename,
+          lines: linesCoverage(coverage.lines),
+          branches: branchesCoverages(coverage.branches)
+        });
+      }
     }
     filesMap() {
         const map = new Map();
