@@ -6461,14 +6461,10 @@ class Coverage {
     constructor(resultset) {
       const coverages = Object.assign(
         {},
-        resultset['(1/4)']['coverage'],
-        resultset['(2/4)']['coverage'],
-        resultset['(3/4)']['coverage'],
-        resultset['(4/4)']['coverage'],
         resultset['(4/1)']['coverage'],
         resultset['(3/1)']['coverage'],
         resultset['(2/1)']['coverage'],
-        resultset['(1/1)']['coverage'],
+        resultset['(1/1)']['coverage']
       )
 
       this.files = [];
