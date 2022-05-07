@@ -6459,13 +6459,7 @@ function branchesCoverages(coverage) {
 }
 class Coverage {
     constructor(resultset) {
-      const coverages = Object.assign(
-        {},
-        resultset['(4/1)']['coverage'],
-        resultset['(3/1)']['coverage'],
-        resultset['(2/1)']['coverage'],
-        resultset['(1/1)']['coverage']
-      )
+      const coverages = resultset['RSpec']['coverage'];
 
       this.files = [];
       for (const filename of Object.keys(coverages)) {
